@@ -6,8 +6,9 @@ import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = "books")
 data class Book constructor(
-        @PrimaryKey
-        var id: Int,
         @ColumnInfo(name = "name")
         var bookName: String,
-        var slug: String) 
+        var slug: String) {
+    @PrimaryKey(autoGenerate = true)
+    var id: Int? = null
+}

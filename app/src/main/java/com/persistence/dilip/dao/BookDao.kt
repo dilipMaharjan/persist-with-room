@@ -10,7 +10,7 @@ interface BookDao {
     fun addBook(book: Book)
 
 
-    @Query("SELECT * FROM book")
+    @Query("SELECT * FROM books")
     fun getBooks(): List<Book>
 
     @Delete
@@ -18,4 +18,7 @@ interface BookDao {
 
     @Update
     fun updateBook(book: Book)
+
+    @Query("SELECT * FROM books where id = :id")
+    fun getBookById(id: Int): Book
 }

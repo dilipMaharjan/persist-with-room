@@ -5,7 +5,7 @@ import android.arch.persistence.room.RoomDatabase
 import com.persistence.dilip.dao.BookDao
 import com.persistence.dilip.model.Book
 
-@Database(entities = [Book::class], version = 1)
+@Database(entities = [Book::class], version = 2)
 abstract class MyAppDatabase : RoomDatabase() {
     abstract fun bookDao(): BookDao
 
