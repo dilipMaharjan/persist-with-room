@@ -12,11 +12,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val myDb = Room.databaseBuilder(this, MyAppDatabase::class.java, "mydb").allowMainThreadQueries().build()
 
+//        add anthology
+//        myDb.anthologyDao().addAnthology(Anthology(name = "Old Testament", slug = "ot"))
+//        myDb.anthologyDao().addAnthology(Anthology(name = "New Testament", slug = "nt"))
+
         //adding a book
-        //   myDb.bookDao().addBook(Book(bookName = "Mathew", slug = "mat"))
+//        myDb.bookDao().addBook(Book(bookName = "Mathew", slug = "mat", anthologyId = 2))
+//        myDb.bookDao().addBook(Book(bookName = "Mark", slug = "mrk", anthologyId = 1))
 
         //get a book by id
         //val book = myDb.bookDao().getBookById(10)
+        val anthology = myDb.anthologyDao().getAnthologies()
 
         /*updating a book
         book.bookName = "Mark"
@@ -29,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         Log.i("MainActivity", book.toString())
         */
+        Log.i("MainActivity", anthology.toString())
         Log.i("MainActivity", myDb.bookDao().getBooks().toString())
     }
 }
